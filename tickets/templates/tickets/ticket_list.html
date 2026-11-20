@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Helpdesk</title>
+</head>
+
+
+<body>
+    <h1>Lista zgłoszeń</h1>
+
+    <ul>
+        {% for ticket in tickets %}
+        <li>
+            {{ ticket.title }} — {{ ticket.get_status_display }}
+        </li>
+        {% empty %}
+        <li>Brak zgłoszeń.</li>
+        {% endfor %}
+    </ul>
+</body>
+
+
+</html>
