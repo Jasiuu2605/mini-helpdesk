@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background-color: #f5f6f8;
+    color: #222;
+}
+
+header {
+    background-color: #1e293b;
+    padding: 20px 32px;
+}
+
+header a {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+main {
+    max-width: 960px;
+    min-height: 70vh;
+    margin: 40px auto;
+    padding: 32px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: #64748b;
+}
+
+a {
+    color: #2563eb;
+}
