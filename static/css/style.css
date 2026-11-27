@@ -39,3 +39,92 @@ footer {
 a {
     color: #2563eb;
 }
+
+
+/* Forms */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    margin-top: 24px;
+}
+
+form p {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+}
+
+form label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: white;
+    color: #222;
+    font: inherit;
+}
+
+form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+form button {
+    align-self: flex-start;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #1d4ed8;
+}
+
+.errorlist {
+    color: #dc2626;
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 24px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-bottom: 24px;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}

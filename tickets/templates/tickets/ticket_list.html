@@ -1,18 +1,17 @@
-
 {% extends "base.html" %}
-
 {% block title %}Lista zgłoszeń | Mini Helpdesk{% endblock %}
-
 {% block content %}
+
     <h1>Lista zgłoszeń</h1>
+
+    <a href="{% url 'ticket_create' %}" class="btn-primary">+ Nowe zgłoszenie</a>
 
     <ul>
         {% for ticket in tickets %}
-            <li>
-                {{ ticket.title }} — {{ ticket.get_status_display }}
-            </li>
+            <li>{{ ticket.title }} — {{ ticket.get_status_display }}</li>
         {% empty %}
             <li>Brak zgłoszeń.</li>
         {% endfor %}
     </ul>
+
 {% endblock %}
