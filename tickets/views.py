@@ -27,3 +27,18 @@ def ticket_create(request):
         form = TicketForm()
 
     return render(request, "tickets/ticket_form.html", {"form": form})
+
+
+def ticket_update(request, pk):
+    ticket = get_object_or_404(Ticket, pk=pk)
+
+    if request.method == "POST":
+        form = TicketForm(request.POST, instance=ticket)
+
+        if form.is_valid():
+            form.save()
+            return redirect("ticket_detail", pk=pk)
+    else:
+        form = TicketForm(instance=ticket)
+
+    return render(request, "tickets/ticket_form.html", {"form": form})

@@ -10,5 +10,7 @@
     <p>Status: {{ ticket.get_status_display }}</p>
     <p>Utworzono: {{ ticket.created_at|date:"d.m.Y H:i" }}</p>
 
+    <a href="{% url 'ticket_update' ticket.pk %}" class="btn-primary">Edytuj zgłoszenie</a>
+
     <a href="{% url 'ticket_list' %}">Powrót do listy</a>
 {% endblock %}
