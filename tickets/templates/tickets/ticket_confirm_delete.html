@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+
+{% block title %}Usuń zgłoszenie | Mini Helpdesk{% endblock %}
+
+{% block content %}
+    <h1>Usuń zgłoszenie</h1>
+
+    <p>
+        Czy na pewno chcesz usunąć zgłoszenie
+        <strong>{{ ticket.title }}</strong>?
+    </p>
+
+    <p>Tej operacji nie można cofnąć.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn-danger">Usuń zgłoszenie</button>
+    </form>
+
+    <a href="{% url 'ticket_detail' ticket.pk %}" class="back-link">Anuluj</a>
+{% endblock %}

@@ -42,3 +42,13 @@ def ticket_update(request, pk):
         form = TicketForm(instance=ticket)
 
     return render(request, "tickets/ticket_form.html", {"form": form})
+
+
+def ticket_delete(request, pk):
+    ticket = get_object_or_404(Ticket, pk=pk)
+
+    if request.method == "POST":
+        ticket.delete()
+        return redirect("ticket_list")
+
+    return render(request, "tickets/ticket_confirm_delete.html", {"ticket": ticket})

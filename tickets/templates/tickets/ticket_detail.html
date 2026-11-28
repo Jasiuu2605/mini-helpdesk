@@ -12,5 +12,7 @@
 
     <a href="{% url 'ticket_update' ticket.pk %}" class="btn-primary">Edytuj zgłoszenie</a>
 
-    <a href="{% url 'ticket_list' %}">Powrót do listy</a>
+    <a href="{% url 'ticket_delete' ticket.pk %}" class="btn-delete">Usuń zgłoszenie</a>
+
+    <a href="{% url 'ticket_list' %}" class="back-link">Powrót do listy</a>
 {% endblock %}
