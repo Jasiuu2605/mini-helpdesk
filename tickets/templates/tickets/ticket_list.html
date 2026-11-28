@@ -1,22 +1,51 @@
+
 {% extends "base.html" %}
+
 {% block title %}Lista zgłoszeń | Mini Helpdesk{% endblock %}
+
 {% block content %}
+    <section class="tickets-page">
+        <div class="page-header">
+            <div>
+                <h1>Zgłoszenia</h1>
+                <p>Przegląd zgłoszeń technicznych</p>
+            </div>
 
-    <h1>Lista zgłoszeń</h1>
+            <a href="{% url 'ticket_create' %}" class="btn-primary">+ Nowe zgłoszenie</a>
+        </div>
 
-    <a href="{% url 'ticket_create' %}" class="btn-primary">+ Nowe zgłoszenie</a>
+        <div class="table-wrapper">
+            <table class="tickets-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Zgłoszenie</th>
+                        <th>Status</th>
+                        <th>Data utworzenia</th>
+                    </tr>
+                </thead>
 
-    <ul>
-
-        {% for ticket in tickets %}
-            <li>
-                <a href="{% url 'ticket_detail' ticket.pk %}">{{ ticket.title }}</a>
-                — {{ ticket.get_status_display }}
-            </li>
-        {% empty %}
-            <li>Brak zgłoszeń.</li>
-        {% endfor %}
-
-    </ul>
-
+                <tbody>
+                    {% for ticket in tickets %}
+                        <tr>
+                            <td class="ticket-id">#{{ ticket.pk }}</td>
+                            <td>
+                                <a href="{% url 'ticket_detail' ticket.pk %}" class="ticket-title">
+                                    {{ ticket.title }}
+                                </a>
+                            </td>
+                            <td>
+                                <span class="status status-{{ ticket.status }}">{{ ticket.get_status_display }}</span>
+                            </td>
+                            <td class="ticket-date">{{ ticket.created_at|date:"d.m.Y" }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="4" class="empty-state">Brak zgłoszeń. Dodaj pierwsze zgłoszenie!</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
 {% endblock %}
