@@ -3,28 +3,42 @@
 
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}Mini Helpdesk{% endblock %}</title>
+        <title>{% block title %}Mini Helpdesk{% endblock %}</title>
 
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <h2>Test header</h2>
-    <header>
-        <nav>
-            <a href="{% url 'ticket_list' %}">Mini Helpdesk</a>
-        </nav>
-    </header>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+        <header class="site-header">
+            <div class="header-container">
+                <a href="{% url 'ticket_list' %}" class="brand">
+                    <span class="brand-icon">H</span>
 
-    <footer>
-        <p>Mini Helpdesk</p>
-    </footer>
-</body>
+                    <span class="brand-text">
+                        <strong>Mini Helpdesk</strong>
+                        <small>Ticket Management</small>
+                    </span>
+                </a>
+
+                <nav class="header-nav" aria-label="Nawigacja główna">
+                    <a href="{% url 'ticket_list' %}" class="nav-link">Zgłoszenia</a>
+
+                    <a href="{% url 'ticket_create' %}" class="nav-button">+ Nowe zgłoszenie</a>
+                </nav>
+            </div>
+        </header>
+
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <p>Mini Helpdesk</p>
+        </footer>
+    </body>
 </html>
