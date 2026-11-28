@@ -279,6 +279,34 @@ form button.btn-danger:hover {
     color: #64748b;
 }
 
+
+/* Ticket priorities */
+
+.priority {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.priority-low {
+    background-color: #f1f5f9;
+    color: #475569;
+}
+
+.priority-medium {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.priority-high {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+
 /* Responsive */
 
 @media (max-width: 600px) {

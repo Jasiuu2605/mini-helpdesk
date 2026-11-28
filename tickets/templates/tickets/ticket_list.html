@@ -21,6 +21,7 @@
                         <th>ID</th>
                         <th>Zgłoszenie</th>
                         <th>Status</th>
+                        <th>Priorytet</th>
                         <th>Data utworzenia</th>
                     </tr>
                 </thead>
@@ -37,11 +38,18 @@
                             <td>
                                 <span class="status status-{{ ticket.status }}">{{ ticket.get_status_display }}</span>
                             </td>
+
+                            <td>
+                                <span class="priority priority-{{ ticket.priority }}">
+                                    {{ ticket.get_priority_display }}
+                                </span>
+                            </td>
+
                             <td class="ticket-date">{{ ticket.created_at|date:"d.m.Y" }}</td>
                         </tr>
                     {% empty %}
                         <tr>
-                            <td colspan="4" class="empty-state">Brak zgłoszeń. Dodaj pierwsze zgłoszenie!</td>
+                            <td colspan="5" class="empty-state">Brak zgłoszeń. Dodaj pierwsze zgłoszenie!</td>
                         </tr>
                     {% endfor %}
                 </tbody>

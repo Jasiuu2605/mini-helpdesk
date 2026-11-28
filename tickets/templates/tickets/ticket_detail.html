@@ -8,6 +8,12 @@
 
     <p>{{ ticket.description }}</p>
     <p>Status: {{ ticket.get_status_display }}</p>
+
+    <p>
+        Priorytet:
+        <span class="priority priority-{{ ticket.priority }}">{{ ticket.get_priority_display }}</span>
+    </p>
+
     <p>Utworzono: {{ ticket.created_at|date:"d.m.Y H:i" }}</p>
 
     <a href="{% url 'ticket_update' ticket.pk %}" class="btn-primary">Edytuj zgłoszenie</a>
